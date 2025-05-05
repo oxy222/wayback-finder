@@ -1,0 +1,218 @@
+/* Basic Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for scroll */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 20px; /* Space from top */
+}
+
+/* Header */
+header h1 {
+    color: #0a4d68;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+header h1 .beta {
+    font-size: 0.6em;
+    vertical-align: super;
+    color: #ff6b6b;
+}
+
+header p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 0.95em;
+}
+
+/* Form Input Group */
+.input-group {
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#url-input {
+    flex-grow: 1; /* Take available space */
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#url-input:focus {
+    outline: none;
+    border-color: #0a4d68;
+    box-shadow: 0 0 5px rgba(10, 77, 104, 0.2);
+}
+
+#submit-button {
+    padding: 12px 20px;
+    background-color: #0a4d68;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    font-weight: 700;
+}
+
+#submit-button:hover {
+    background-color: #083d53;
+}
+#submit-button:active {
+     transform: scale(0.98);
+}
+
+/* Status Messages (Loading, Error, Info) */
+.status {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.status.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.status.info {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border-left-color: #0a4d68;
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading span {
+    color: #555;
+}
+
+/* Result Area */
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e8f5e9; /* Light green background */
+    border-radius: 5px;
+    border: 1px solid #a5d6a7;
+    text-align: left; /* Align text left within the result box */
+}
+
+#result h2 {
+    font-size: 1.1em;
+    color: #2e7d32; /* Darker green */
+    margin-bottom: 10px;
+}
+
+#result-link {
+    color: #0a4d68;
+    text-decoration: none;
+    font-weight: bold;
+    word-break: break-all; /* Prevent long URLs from breaking layout */
+    display: block; /* Ensure it takes its own line */
+    margin-bottom: 5px;
+}
+
+#result-link:hover {
+    text-decoration: underline;
+}
+
+#result-timestamp {
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    font-size: 0.85em;
+    color: #777;
+}
+
+footer a {
+    color: #0a4d68;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+/* Screen Reader Only */
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;  /* 2 */
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important; /* 3 */
+}
+
+
+/* Responsive Adjustments */
+@media (min-width: 600px) {
+    .input-group {
+        flex-direction: row; /* Side-by-side on larger screens */
+    }
+     #submit-button {
+        /* Optionally reduce width slightly if needed */
+        /* width: auto; */
+    }
+}
