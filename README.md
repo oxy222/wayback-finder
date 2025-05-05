@@ -1,4 +1,4 @@
-# Wayback Finder α
+# Wayback Finder 
 
 A simple, sleek, and mobile-friendly web application to find the most recent snapshot of a given URL stored in the Internet Archive's Wayback Machine.
 
