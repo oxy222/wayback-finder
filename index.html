@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayback Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wayback Finder <span class="beta">α</span></h1>
+            <p>Find the latest snapshot of a webpage on the Internet Archive.</p>
+        </header>
+
+        <main>
+            <form id="wayback-form">
+                <div class="input-group">
+                    <label for="url-input" class="sr-only">Enter URL</label>
+                    <input type="url" id="url-input" placeholder="e.g., https://example.com" required>
+                    <button type="submit" id="submit-button">Find Snapshot</button>
+                </div>
+            </form>
+
+            <div id="loading" class="status hidden">
+                <div class="spinner"></div>
+                <span>Checking the archives...</span>
+            </div>
+
+            <div id="error-message" class="status error hidden">
+                </div>
+
+            <div id="result" class="hidden">
+                <h2>Latest Snapshot:</h2>
+                <a id="result-link" href="#" target="_blank" rel="noopener noreferrer"></a>
+                <p id="result-timestamp"></p>
+            </div>
+
+             <div id="not-found" class="status info hidden">
+                No snapshot found for this URL in the Wayback Machine.
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by the <a href="https://archive.org/help/wayback_api.php" target="_blank" rel="noopener noreferrer">Internet Archive Wayback Machine API</a>.</p>
+             <p>Current Date: <span id="current-date"></span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
